@@ -1,0 +1,178 @@
+.blog-list{
+  padding-top: 20px;
+
+
+
+  @include respond-to(md){
+    padding-top: 96px;
+
+
+  }
+
+
+
+  &__menu{
+    padding-top: 1px;
+    align-items: center;
+
+    display: flex;
+    background-color: #f4f4f4;
+    padding-left: 20px;
+
+    @include respond-to(md){
+      height: 88px;
+      justify-content: center;
+      padding-left: 0px;
+    }
+
+    ul{
+
+      display: flex;
+      flex-wrap: wrap;
+
+
+      @include respond-to(md){
+
+        display: flex;   
+        justify-content: center;
+      }
+    }
+
+    li{
+      margin-top: 8px;
+      margin-bottom: 8px;
+
+      letter-spacing: 1.6px;
+      font-size: 20px;
+      font-family: mabry-medium;
+      text-transform: uppercase;
+      transition: 0.4s;
+      
+
+
+
+      &:after{
+        content: "·";
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:last-of-type{
+          display: none;
+        }
+
+        @include respond-to(md){
+          display: none;
+        }
+      }
+
+      &:last-child{
+        &:after{
+          display: none;
+  
+
+        }
+      }
+
+      @include respond-to(md){
+        margin: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      &.active{
+        opacity: 0.4;
+      }
+
+      @include hover{
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .grid-sizer{
+    display: none;
+    width: 100%;
+
+    @include respond-to(sm){
+      width: calc(50% );
+    }
+
+    @include respond-to(md){
+      width: calc(33.333% );
+    }
+  }
+
+  &__inner{
+    display: grid;
+    grid-template-columns: 1fr ;
+
+
+    @include respond-to(sm){
+      grid-template-columns: 1fr 1fr ;
+      grid-column-gap: 27px;
+    }
+
+    @include respond-to(md){
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 37px;
+    }
+
+  }
+
+
+  &__item{
+    width: calc(100%);
+    margin-bottom: 40px;
+    border-bottom: solid $brand-color;
+    border-width: 1px;
+    padding-bottom: 40px;
+
+    @include respond-to(sm){
+      // width: calc(50% - 38px);
+    }
+
+    @include respond-to(md){
+      // width: calc(33.333% - 38px);
+    }
+
+    h2{
+      font-size: 31px;
+      font-family: 'mabry-regular';  
+      text-transform: uppercase;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    h4{
+      font-size: 22px;
+      font-family: founders-grotesk-web-light;
+      font-weight: 400;
+      padding: 10px 0px 5px;
+    }
+
+    p{
+      font-size: 18px;
+      font-family: founders-grotesk-web-regular;
+      padding-bottom: 33px;
+      padding-top: 15px;
+    }
+
+    img{
+      max-height: 300px;
+      object-fit: cover;
+      transition: 0.4s;
+      width: 100%;
+
+      @include hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__item-img-wrap{
+    max-height: 300px;
+    overflow: hidden;
+  }
+}

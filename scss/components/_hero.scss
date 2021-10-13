@@ -1,0 +1,162 @@
+.hero{
+  position: relative;
+  padding-top: 29px;
+  border-bottom: solid $brand-color;
+  border-width: 1px;
+  padding-bottom: 36px;
+
+  &.hero--dark{
+    background-color: $brand-color;
+    color: white;
+    border-bottom: solid white;
+
+    .btn{
+      border: 1px solid white;
+      color: white;
+  
+      @include hover{
+        background-color: white;
+        color: $brand-color;
+      }
+
+      // @include hover{
+      //   background-color: $brand-color;
+      //   color: white;
+      //   border-color: $brand-color;
+      // }
+  
+      &.active{
+        background-color: white !important;
+        color: $brand-color !important;
+      }
+    }
+  }
+  
+
+  @include respond-to(md){
+    padding-top: 75px;
+    border: none;
+    padding-bottom: none;
+  }
+
+
+  &__inner{
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include respond-to(md){
+      display: block;
+      //height: calc(100vh - 401px);
+    }
+
+    @include respond-to(xl){
+     // height: calc(100vh - 156px);
+    }
+
+
+  }
+
+  &__left{
+    position: relative;
+    z-index: 9;
+
+    @include respond-to(md){
+      height: 58vh;
+    }
+
+    @include respond-to(xl){
+      //height: calc(58vh + 67px);
+    }
+
+    h1{
+      font-family: 'mabry-bold';
+      font-size: 28px;
+      text-align: center;
+
+      @include respond-to(md){
+        font-size: 54px;
+        text-align: left;
+      }
+    }
+
+    h2{
+      font-family: 'mabry-light';
+      font-weight: 400;
+      font-size: 28px;
+      text-align: center;
+
+      @include respond-to(md){
+        font-size: 54px;
+        text-align: left;
+        margin-top: -20px;
+      }
+    }
+
+    p{
+      padding-top: 18px;
+      padding-bottom: 29px;
+      font-family: 'mabry-light';
+      font-size: 14px;
+      text-align: center;
+
+      @include respond-to(md){
+        font-size: 24px;
+        text-align: left;
+        padding-top: 46px;
+        padding-bottom: 60px;
+      }
+    }
+
+    & .btn{
+      width: 100%;
+
+      @include respond-to(md){
+        width: 260px;
+      }
+
+    }
+  }
+
+  &__right{
+
+
+    img{
+
+
+      @include respond-to(md){
+        position: absolute;
+        top: 0; 
+        right: -0px;
+        height: 75vh;
+
+        top: -13px;
+        max-height: calc(100vh - 221px);
+      }
+
+      @include respond-to(lg){
+        right: -0px;
+      }
+      
+
+
+      @include respond-to(xl){
+        right: -117px;
+        //top: 0; 
+        right: -0px;
+        height: 75vh;
+        max-height: 738px;
+      }
+    }
+  }
+}
+
+.mac{
+
+  .hero__right img{
+
+    @include respond-to(md){
+      top: -63px;
+    }
+  }
+}

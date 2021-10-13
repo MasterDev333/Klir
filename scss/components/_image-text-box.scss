@@ -1,0 +1,155 @@
+.image-text-box{
+  margin-bottom: 90px;
+
+  @include respond-to(md){
+    margin-bottom: 120px;
+  }
+
+  &__inner{
+    position: relative;
+  }
+
+
+
+  &__image-wrap{
+    margin-left: -20px;
+    width: calc(100% + 40px);
+
+    @include respond-to(md){
+      margin-left: 0px;
+      width: calc(100% );
+    }
+
+    img{
+      height: 86vw;
+      object-fit: cover;
+      width: 100%;
+
+      @include respond-to(md){
+        position: absolute;
+        height: 100%;
+        width: 70%;
+      }
+    }
+
+    & .right{
+
+      img{
+        right: 20px;
+      }
+
+    }
+
+    & .Right{
+
+      img{
+        right: 20px;
+      }
+    }
+  }
+
+  &__text-wrap{
+
+
+    @include respond-to(md){
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__text-inner{
+
+    padding: 25px;
+    position: relative; 
+    z-index: 99;
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to(md){
+      padding: 45px;
+      margin-top: 0px;
+      display: block;
+    }
+
+    @include respond-to(md){
+      max-width: 520px;
+    }
+
+    border: solid black;
+    border-width: 1px;
+
+    &.left{
+
+      @include respond-to(md){
+        margin-right: 0px;
+        margin-left: auto;
+      }
+    }
+
+    h2{
+      padding-bottom: 30px;
+      text-align: center;
+      font-size: 24px;
+      font-family: 'mabry-regular';
+      padding: 20px;
+
+
+      @include respond-to(md){
+        padding: 0px;
+        padding-bottom: 117px;
+        max-width: 215px;      
+        text-align: left;  
+      }
+    }
+
+    p{
+      font-size: 18px;
+      font-family: 'founders-grotesk-web-regular';
+      padding-bottom: 23px;
+      padding-top: 23px;
+      padding: 20px;
+      text-align: center;
+
+      @include respond-to(md){
+        padding: 0;
+        padding-bottom: 23px;
+        padding-top: 23px;
+        text-align: left;
+      }
+
+
+    }
+
+    a{
+      font-size: 18px;
+    }
+
+    a{
+      margin: 30px 0px;
+
+      @include respond-to(md){
+        margin: 0;
+      }
+    }
+  }
+
+  .Light{
+    .btn{
+      border: 1px solid white;
+      color: white;
+  
+      @include hover{
+        background-color: white;
+        color: $brand-color;
+      }
+  
+      &.active{
+        background-color: white !important;
+        color: $brand-color !important;
+      }
+    }
+  }
+}

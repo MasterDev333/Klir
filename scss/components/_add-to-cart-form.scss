@@ -1,0 +1,204 @@
+
+.add-to-cart-form{
+  position: relative;
+
+  &#mobile-form{
+
+    @include respond-to(md){
+     display: none;
+    }
+  }
+
+  &#desktop-form{
+    display: none;
+
+    @include respond-to(md){
+      display: block;
+    }
+  }
+
+  .wcsatt-options-wrapper{
+    display: none;
+  }
+
+  .added_to_cart{
+   display: none !important;
+  }
+
+
+  &__sub-btns{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include respond-to(lg){
+      flex-wrap: nowrap;
+    }
+
+    .btn{
+      font-family: 'mabry-medium';
+      font-size: 16px;
+      padding: 17px 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 400;
+
+      @include respond-to(lg){
+        width: 282px;
+      }
+
+      &.active{
+        background-color: $brand-color;
+        color: white;
+      }
+
+      span{
+        font-family: 'mabry-bold';
+      }
+    }
+
+    .btn--primary{
+      width: 268px;
+    }
+  }
+
+  .btn{
+    width: 100%;
+    z-index: 9;
+    margin-bottom: 11px;
+
+    @include respond-to(lg){
+      margin-bottom: 0px;
+    }
+  }
+
+  .subscription-btn{
+    background-color: white;
+
+    @include hover{
+      background-color: $brand-color;
+    }
+  }
+
+  &__hidden-sub-info{  
+
+
+    display: block;
+    position: absolute;
+    top: 66px;
+    left: 0%;
+    background-color: $brand-color;
+    color: white;
+    max-height: 0px;
+    overflow: hidden;    
+    width: 100%;
+    padding: 10px 17px;
+    transition: 0.4s;
+
+    @include respond-to(md){
+      width: 50%;
+      left: 50%;
+      top: 0;
+    }
+
+
+
+    h5{
+      font-size: 13px;
+      font-family: 'mabry-bold';
+      margin-bottom: 10px;
+      margin-top: 0px;
+    }
+
+    p{
+      font-family: founders-grotesk-web-regular;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    &.active{
+      top: -70px;
+      z-index: 999;
+      max-height: 200px;
+      padding: 10px 17px;
+      transition:  0.4s;
+      height: 135px;
+
+      @include respond-to(md){
+        top: -123px;
+        z-index: 0;
+      } 
+    }
+  }
+}
+
+#bundle-dummy{
+  display: none;
+}
+
+p{
+  //font-size: 8000px !important;
+}
+
+.btn-add-to-cart{
+  position: relative;
+}
+
+
+
+.button--loading {
+  // visibility: hidden;
+  // opacity: 0;
+
+  color: transparent !important;
+  background-color: $brand-color !important;
+}
+
+.button--loading-dark {
+
+
+  color: transparent !important;
+
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+.button--loading-dark::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: $brand-color;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}

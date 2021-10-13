@@ -1,0 +1,126 @@
+.account-mods{
+
+  h1, h2{
+
+    text-align: center;
+    font-family: mabry-bold;
+    text-transform: uppercase;
+    font-size: 28px;
+
+    @include respond-to(md){
+      font-size: 50px;
+    }
+  }
+
+  h4, p{
+    font-size: 18px;
+    font-family: founders-grotesk-web-regular;
+    text-align: center;
+    font-weight: 400;
+     margin: auto;
+     margin-top: 20px;
+
+     font-size: 18px;
+
+     @include respond-to(md){
+    font-size: 25px;
+    }
+  }
+}
+
+.woocommerce-form-login, .woocommerce-form-register, .account-mods{
+  border: none !important;
+
+  .lost_password, .js-create-account{
+    text-decoration: underline;
+    text-align: center;
+    font-family: founders-grotesk-web-regular;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include respond-to(md){
+      font-size: 25px;
+    }
+
+    @include hover{
+      opacity: 0.4;
+      cursor: pointer;
+    }
+  }
+
+  label{
+    display: none !important;
+  }
+
+  input{
+    border: solid $brand-color;
+    border-width: 1px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: founders-grotesk-web-regular;
+    font-weight: 400;
+
+    @include respond-to(md){
+      font-size: 25px;
+    }
+  }
+
+  .woocommerce-form-login__submit, .woocommerce-form-register__submit, .woocommerce-Button{
+    display: block !important;
+    margin: auto !important;
+    float: none !important;
+    background-color: $brand-color !important;
+    color: white !important;
+    
+
+    @include respond-to(md){
+      width: 311px;
+    }
+
+    @include hover{
+      background-color: white !important;
+      color: $brand-color !important;
+    }
+  }
+
+  .woocommerce-form-register__submit{
+    margin-top: 30px !important;
+  }
+}
+
+.woocommerce-account .u-column2 {
+  display: none;
+}
+
+.woocommerce-account .u-column1, .woocommerce-account .u-column2{
+  margin: auto;
+  float: none !important;
+}
+
+.woocommerce-lost-password{
+
+  p{
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    font-size: 18px;
+    font-family: founders-grotesk-web-regular;
+    text-align: center;
+    font-weight: 400;
+     margin: auto;
+     margin-top: 20px;
+     //margin-bottom: 50px;
+
+     @include respond-to(md){
+      font-size: 25px;
+    }
+  
+  }
+
+  .woocommerce-message{
+
+
+
+  }
+}

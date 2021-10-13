@@ -1,0 +1,361 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+
+  &--small{
+    max-width: 1250px;
+  }
+}
+
+.page-wrap{
+  padding-top: 106px;
+  background-color: #00205c00;
+  transition: 0.0s;
+
+  @include respond-to(md){
+    padding-top: 184px;
+  }
+}
+
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+html.disable-scrolling {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+/**
+* Embed Responsively
+* http://embedresponsively.com/
+*/
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.animated-border{
+  width: 100%;
+  height: 1px;
+  background-color: $brand-color;
+  transition: width 0.9s;
+}
+
+.animated-border-vert{
+  height: 100%;
+  z-index: 9;
+  position: relative;
+  background-color: $brand-color;
+  width: 1px;
+}
+
+
+
+/* Scroll reveal */
+.is-observer {
+  .reveal-slide {
+    opacity: 0;
+    transform: translateY(140px);
+    @include transition-reveal;
+  }
+
+  .reveal-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    @include transition-reveal;
+  }
+
+  .reveal-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    @include transition-reveal;
+  }
+
+  .reveal-fade {
+    opacity: 0;
+    @include transition-reveal;
+  }
+
+  .is-visible {
+    &.reveal-del-1,
+    .reveal-del-1 {
+      transition-delay: 0.4s;
+    }
+    &.reveal-del-2,
+    .reveal-del-2 {
+      transition-delay: 0.7s;
+    }
+    &.reveal-del-3,
+    .reveal-del-3 {
+      transition-delay: 1s;
+    }
+    &.reveal-del-4,
+    .reveal-del-4 {
+      transition-delay: 1.3s;
+    }
+
+    .reveal-slide,
+    &.reveal-slide {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-slide-right,
+    &.reveal-slide-right,
+    .reveal-slide-left,
+    &.reveal-slide-left {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-fade,
+    &.reveal-fade {
+      opacity: 1;
+    }
+  }
+
+  
+.animated-border{
+  width: 0%;
+  height: 1px;
+  background-color: $brand-color;
+  transition: width 0.9s;
+}
+
+.animated-border.is-visible{
+    width: 100%;
+    z-index: 9;
+    position: relative;
+
+    &.reveal-del-1,
+    .reveal-del-1 {
+      transition-delay: 0.1s;
+    }
+}
+
+
+.animated-border-vert{
+  width: 1px;
+  height: 0%;
+  background-color: $brand-color;
+  transition: height 0.9s;
+}
+
+.animated-border-vert.is-visible{
+    height: 100%;
+    z-index: 9;
+    position: relative;
+
+    &.reveal-del-1,
+    .reveal-del-1 {
+      transition-delay: 0.3s;
+    }
+  }
+}
+
+.desktop-only{
+  display: none;
+
+  @include respond-to(md){
+    display: block;
+  }
+}
+
+.mobile-only{
+  @include respond-to(md){
+    display: none;
+  }
+}
+
+.cn-button.wp-default{
+  background-color: white !important;
+  color: $brand-color !important;
+}
+
+
+
+
+
+
+
+
+
+.page-wrap--dark{
+
+  .jdgm-star{
+    color: rgb(0, 32, 92);
+    background-color: white !important;
+  }
+
+  background-color: $brand-color;
+  //background-color: black;
+  color: white;
+
+  a{
+    color: white;
+  }
+
+  .animated-border-vert{
+    background-color: white;
+  }
+
+  .animated-border{
+    background-color: white;
+  }
+
+  svg{
+    path{
+      stroke: white ;
+    }
+  }
+
+  .btn{
+    border: 1px solid white;
+    color: white;
+
+    @include hover{
+      background-color: white;
+      color: $brand-color;
+    }
+
+    &.active{
+      background-color: white !important;
+      color: $brand-color !important;
+    }
+  }
+
+  .svg-blue{
+    stroke: $brand-color
+  }
+
+  .product-main__ingredients-title{
+    border-top: 1px solid #ffffff;
+  }
+
+  .swiper-pagination-bullet{
+
+    background-color: $brand-color !important;
+    border: solid white !important;
+    border-width: 1px !important;
+
+  }
+
+  .swiper-pagination-bullet-active{
+    height: 12px;
+    width: 12px;
+    background-color: white !important;
+  }
+
+  .subscription-btn{
+    background-color: $brand-color !important;
+
+    @include hover{
+      background-color: white !important;
+    }
+  }
+
+  .add-to-cart-form__hidden-sub-info{
+    background-color: white !important;
+    color: $brand-color !important;
+  }
+
+  .product-main__right h1 span{
+    left: 220px !important;
+  }
+
+  .product-main__ingredient-row, .product-main__ingredients-hidden-title{
+    border-color: white;
+  }
+
+  .product-main__mobile-title span{
+    left: 167px;
+  }
+
+  .jdgm-carousel__left-arrow{
+    border-color: white !important;
+  }
+
+  .jdgm-carousel__right-arrow{
+    border-color: white !important;
+  }
+
+
+}
+
+#page-wrap--dark{
+  .complete-the-set{
+    background-color: $brand-color;
+    color: white;
+  }
+}
+
+#sb_instagram{
+  margin-bottom: -90px ;
+}
+
+
+
+

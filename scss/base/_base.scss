@@ -1,0 +1,204 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  text-decoration: none;
+  @include transition;
+  color: $brand-color;
+
+  @include hover{
+    opacity: 0.5;
+  }
+}
+
+a.no-opacity{
+
+  @include hover{
+    opacity: 1;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.btn{
+  border: solid $brand-color;
+  border-width: 1px;
+  padding: 17px 40px;
+  font-family: 'mabry-bold';
+  font-size: 13px;
+  color: $brand-color;
+  transition: 0.4s;
+
+  &--primary{
+    color: white;
+    background-color: $brand-color;
+  }
+
+  @include respond-to(sm){
+    font-size: 17px;
+  }
+
+  @include hover{
+    background-color: $brand-color;
+    color: white;
+    opacity: 1 !important;
+  }
+
+  &--primary{
+
+    @include hover{
+      color: $brand-color;
+      background-color: white;
+      opacity: 1;
+    }
+  }
+}
+
+.btn-oval{
+  height: 43px;
+  font-family: 'mabry-regular';
+  font-size: 10px;
+  border-radius: 100%;
+  border: solid $brand-color;
+  border-width: 1px;
+  padding: 0px 25px;
+  transition: 0.4s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 96px;
+
+  @include hover{
+    background-color: $brand-color;
+    color: white;
+    opacity: 1 !important;
+    cursor: pointer;
+  }
+}
+
+*:focus {
+  outline: none;
+}
+
+input{
+  background-color: none;
+  border: none;
+  border-bottom: solid $brand-color;
+  border-width: 1px;
+  color: red;
+  color: $brand-color;
+  font-size: 14px;
+  font-family: 'mabry-light';
+  padding: 11px 0px;
+
+  &::placeholder{
+    color: $brand-color;
+  }
+}
+
+.cn-text-container a{
+text-decoration: underline;color: #00205c;
+}
+.page-id-1296 .header-copy__inner p{
+	max-width: none;
+    margin-top: -57px;
+}
+
+
+
+.cn-text-container a{
+text-decoration: underline;color: #00205c;
+}
+.page-id-1296 .header-copy__inner p{
+	max-width: none;
+    margin-top: -57px;
+}
+
+@media screen and (max-width: 768px) {
+	.product-main__duo-selection .btn{
+        border-left: none;
+   		border-right: none;
+    }
+}
+
+.product-main__left-inner img{
+	height: 84vw;
+}
+
+.product-main__left-inner{
+	padding-bottom: 0px;
+}
+
+@media (min-width: 1024px){
+    .product-main .swiper-slide img {
+        max-width: none;
+    }
+}
+
+.product-main__ingredient-row p:last-of-type{
+    text-align: right;
+    margin-left: 19px;
+}
