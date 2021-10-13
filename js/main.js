@@ -17,6 +17,8 @@ $(document).ready(() => {
   let isObserver = true;
   let observer;
   let isTouch;
+
+  $('.shop_table .button.suspend').html('Pause');
   
   console.log('start')
 

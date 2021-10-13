@@ -16,6 +16,7 @@
     font-size: 31px;
     font-weight: 500;
     padding: 20px;
+    text-transform: uppercase;
 
     @include respond-to(md){
       font-size: 35px;
@@ -27,7 +28,10 @@
 .jdgm--on:before{
   content: ""
 }
-
+.jdgm-all-reviews__summary-stars {
+  margin-bottom: 10px;
+  line-height: 14px;
+}
 .jdgm-star{
   position: relative;
   margin-right: 3px !important;
@@ -183,6 +187,8 @@
 // }
 .reviews-slider {
   &__link {
+    padding: 0 20px;
+    margin-bottom: 20px;
     text-align: center;
     @include respond-to(sm) {
       margin-bottom: 40px;
@@ -191,6 +197,7 @@
   .text-link {
     font-size: 13px;
     font-family: mabry-regular;
+    text-transform: uppercase;
     @include respond-to(sm) {
       font-size: 18px;
       font-family: mabry-medium;
